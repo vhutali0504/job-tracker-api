@@ -24,6 +24,13 @@ const addApplication = async (req, res) => {
       return res.status(400).json({ error: 'Company and role are required' });
     }
 
+    const validStatuses = ['Applied', 'Interview', 'Offer', 'Rejected'];
+    if (status && !validStatuses.includes(status)) {
+      return res.status(400).json({ 
+        error: 'Status must be one of: Applied, Interview, Offer, Rejected' 
+      });
+    }
+
     const application = await createApplication(
       req.userId, company, role, status, date_applied, notes
     );
@@ -36,6 +43,15 @@ const addApplication = async (req, res) => {
 const editApplication = async (req, res) => {
   try {
     const { id } = req.params;
+    const { company, role, status, date_applied, notes } = req.body;
+
+    const validStatuses = ['Applied', 'Interview', 'Offer', 'Rejected'];
+    if (status && !validStatuses.includes(status)) {
+      return res.status(400).json({ 
+        error: 'Status must be one of: Applied, Interview, Offer, Rejected' 
+      });
+    }
+
     const updated = await updateApplication(id, req.userId, req.body);
 
     if (!updated) {
