@@ -1,10 +1,13 @@
 const express = require('express');
+const cors = require('cors');
 require('dotenv').config();
 const pool = require('./config/db');
 const authRoutes = require('./routes/authRoutes');
 const applicationRoutes = require('./routes/applicationRoutes');
 
 const app = express();
+
+app.use(cors());
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
@@ -19,12 +22,10 @@ app.get('/', async (req, res) => {
   }
 });
 
-// Handle routes that don't exist
 app.use((req, res) => {
   res.status(404).json({ error: 'Route not found' });
 });
 
-// Global error handler
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ error: 'Something went wrong' });

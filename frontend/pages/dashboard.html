@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Job Tracker | Dashboard</title>
+  <link rel="stylesheet" href="../styles/dashboard.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-logo">JobTracker</div>
+    <div class="nav-links">
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="applications.html">Applications</a>
+      <button class="btn-logout" onclick="logout()">Logout</button>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main">
+    <div class="header">
+      <h1>Welcome back </h1>
+      <p>Here's a summary of your job search</p>
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="cards">
+      <div class="card blue">
+        <div class="card-label">Applied</div>
+        <div class="card-count" id="appliedCount">0</div>
+      </div>
+      <div class="card yellow">
+        <div class="card-label">Interview</div>
+        <div class="card-count" id="interviewCount">0</div>
+      </div>
+      <div class="card green">
+        <div class="card-label">Offer</div>
+        <div class="card-count" id="offerCount">0</div>
+      </div>
+      <div class="card red">
+        <div class="card-label">Rejected</div>
+        <div class="card-count" id="rejectedCount">0</div>
+      </div>
+    </div>
+
+    <!-- Recent Applications -->
+    <div class="recent">
+      <div class="recent-header">
+        <h2>Recent Applications</h2>
+        <a href="applications.html" class="btn-view">View All</a>
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Company</th>
+              <th>Role</th>
+              <th>Status</th>
+              <th>Date Applied</th>
+            </tr>
+          </thead>
+          <tbody id="recentApplications">
+            <tr>
+              <td colspan="4" class="empty">Loading...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

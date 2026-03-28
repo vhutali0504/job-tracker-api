@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  min-height: 100vh;
+}
+
+.navbar {
+  background: #1e293b;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #334155;
+}
+
+.nav-logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: #6366f1;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-links a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #e2e8f0;
+}
+
+.btn-logout {
+  background: transparent;
+  border: 1px solid #334155;
+  color: #94a3b8;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.btn-logout:hover {
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+.main {
+  padding: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 32px;
+}
+
+.header h1 {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.header p {
+  color: #94a3b8;
+  margin-top: 4px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.card {
+  background: #1e293b;
+  padding: 24px;
+  border-radius: 12px;
+  border-left: 4px solid;
+}
+
+.card.blue { border-color: #6366f1; }
+.card.yellow { border-color: #f59e0b; }
+.card.green { border-color: #10b981; }
+.card.red { border-color: #ef4444; }
+
+.card-label {
+  font-size: 13px;
+  color: #94a3b8;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.card-count {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.card.blue .card-count { color: #6366f1; }
+.card.yellow .card-count { color: #f59e0b; }
+.card.green .card-count { color: #10b981; }
+.card.red .card-count { color: #ef4444; }
+
+.recent {
+  background: #1e293b;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.recent-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.recent-header h2 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.btn-view {
+  color: #6366f1;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  text-align: left;
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 10px 12px;
+  border-bottom: 1px solid #334155;
+}
+
+tbody td {
+  padding: 14px 12px;
+  font-size: 14px;
+  border-bottom: 1px solid #1e293b;
+  color: #cbd5e1;
+}
+
+.empty {
+  text-align: center;
+  color: #64748b;
+  padding: 32px !important;
+}
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.badge.Applied { background: #1e3a5f; color: #93c5fd; }
+.badge.Interview { background: #3d2a00; color: #fcd34d; }
+.badge.Offer { background: #052e16; color: #86efac; }
+.badge.Rejected { background: #450a0a; color: #fca5a5; }
